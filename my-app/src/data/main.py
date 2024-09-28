@@ -6,7 +6,7 @@ from typing import List
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(project_root)
 
-from data import read_csv, detect_anomalies
+from data import read_csv, detect_anomalies, predict_hardware_failure
 
 def get_columns_to_check() -> List[str]:
     """Prompt the user to input columns for anomaly detection."""
@@ -40,13 +40,20 @@ def main():
     print(f"\nDetecting anomalies in columns: {', '.join(columns_to_check)}")
     anomalies = detect_anomalies(df, columns_to_check)
     
-    # Print the anomalies
-    print("\nDetected Anomalies:")
-    print(anomalies)
+    # Predict hardware failure
+    anomalies_with_risk, prediction = predict_hardware_failure(anomalies, columns_to_check)
     
-    # Save the anomalies to a new CSV file
-    anomalies.to_csv(output_file, index=False)
-    print(f"\nAnomalies saved to '{output_file}'")
+    # Print the anomalies with risk scores
+    print("\nDetected Anomalies with Risk Scores:")
+    print(anomalies_with_risk)
+    
+    # Print the prediction
+    print("\nHardware Failure Prediction:")
+    print(prediction)
+    
+    # Save the anomalies with risk scores to a new CSV file
+    anomalies_with_risk.to_csv(output_file, index=False)
+    print(f"\nAnomalies with risk scores saved to '{output_file}'")
 
 if __name__ == "__main__":
     main()
