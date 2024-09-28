@@ -3,6 +3,7 @@
 # Import necessary modules
 from .data_loader import read_csv
 from .anomaly_detector import detect_anomalies
+from .anomaly_detector import predict_hardware_failure 
 
 # Define package-level variables
 __all__ = ['read_csv', 'detect_anomalies']

@@ -1,3 +1,4 @@
+import pandas as pd
 import os
 import sys
 from typing import List
@@ -8,15 +9,9 @@ sys.path.append(project_root)
 
 from data import read_csv, detect_anomalies, predict_hardware_failure
 
-def get_columns_to_check() -> List[str]:
-    """Prompt the user to input columns for anomaly detection."""
-    print("Enter the names of the columns you want to check for anomalies, separated by commas:")
-    columns_input = input().strip()
-    return [col.strip() for col in columns_input.split(',')]
-
 def main():
     # Define file paths
-    input_file = os.path.join(project_root, 'data', 'your_file.csv')
+    input_file = os.path.join(project_root, 'data', 'ai4i2020.csv')
     output_file = os.path.join(project_root, 'output', 'anomalies.csv')
     
     # Read the CSV file
@@ -34,10 +29,20 @@ def main():
     print(df.describe())
     
     # Get columns to check from user input
-    columns_to_check = get_columns_to_check()
+    columns_to_check = pd.DataFrame([
+    "Air temperature [K]", 
+    "Process temperature [K]", 
+    "Rotational speed [rpm]", 
+    "Torque [Nm]", 
+    "Tool wear [min]", 
+    "Machine failure", 
+    "TWF", 
+    "HDF", 
+    "PWF", 
+    "OSF", 
+    "RNF"])
     
     # Detect anomalies
-    print(f"\nDetecting anomalies in columns: {', '.join(columns_to_check)}")
     anomalies = detect_anomalies(df, columns_to_check)
     
     # Predict hardware failure
