@@ -5,7 +5,7 @@
 <br />Firmware Optimization Model
 <br />https://github.com/rabbitmomo/Firmware-Optimization-Model
 <br />Decentralized Identity Management System 
-<br />[https://github.com/rabbitmomo/Firmware-Optimization-Model](https://github.com/lingyuqian0301/Decentralised-identity-management)
+<br />https://github.com/lingyuqian0301/Decentralised-identity-management
 
 # Machine Anomaly Detection and Hardware Failure Prediction Demo
 
