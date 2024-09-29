@@ -48,9 +48,10 @@ def main():
     # Predict hardware failure
     anomalies_with_risk, prediction = predict_hardware_failure(anomalies, columns_to_check)
     
+    # Not working
     # Print the anomalies with risk scores
-    print("\nDetected Anomalies with Risk Scores:")
-    print(anomalies_with_risk)
+    # ("\nDetected Anomalies with Risk Scores:")
+    # print(anomalies_with_risk)
     
     # Print the prediction
     print("\nHardware Failure Prediction:")
