@@ -36,7 +36,7 @@ This demo application leverages machine learning techniques to detect anomalies 
 
 ### Back-End
 
-The back-end script processes the `ai4i2020.csv` data file and detects anomalies using the Isolation Forest algorithm. It also evaluates the risk of hardware failure based on the percentage of detected anomalies.
+The back-end script processes the result data file and detects anomalies using the Isolation Forest algorithm. It also evaluates the risk of hardware failure based on the percentage of detected anomalies.
 
 # Data Format
 
