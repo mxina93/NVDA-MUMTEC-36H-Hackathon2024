@@ -25,3 +25,40 @@ This demo application leverages machine learning techniques to detect anomalies 
   - Pandas (for data manipulation)
   - Scikit-Learn (for anomaly detection)
   - Matplotlib (optional, for visualization)
+
+# Usage Instructions
+
+### Front-End
+
+1. Open your web browser and go to `http://localhost:3000`.
+2. Follow the instructions displayed on the web page to upload a CSV file containing the required machine data.
+3. After uploading the file, click on the "Upload and Analyze" button. The application will process the data and display the results.
+
+### Back-End
+
+The back-end script processes the `ai4i2020.csv` data file and detects anomalies using the Isolation Forest algorithm. It also evaluates the risk of hardware failure based on the percentage of detected anomalies.
+
+# Data Format
+
+The CSV file should contain the following columns, with numeric values:
+
+- Air temperature [K]
+- Process temperature [K]
+- Rotational speed [rpm]
+- Torque [Nm]
+- Tool wear [min]
+- Machine failure
+- TWF
+- HDF
+- PWF
+- OSF
+- RNF
+
+**Note:** The Machine failure and failure type columns should contain binary values (0 or 1).
+
+# Functionality
+
+- **Anomaly Detection:** The application uses the Isolation Forest algorithm to identify anomalies in the provided data.
+- **Risk Assessment:** Based on the detected anomalies, the application provides a risk assessment indicating low, medium, or high risk of hardware failure.
+- **Results Display:** Detected anomalies and their corresponding risk scores are displayed in a table format for user review.
+
