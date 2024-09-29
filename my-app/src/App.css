@@ -34,3 +34,24 @@ th {
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+
+.instructions {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.instructions h2 {
+  margin-top: 0;
+}
+
+.instructions ul {
+  padding-left: 20px;
+}
+
+.instructions p {
+  margin-bottom: 10px;
+}

@@ -133,6 +133,24 @@ function App() {
   return (
     <div className="App">
       <h1>Machine Anomaly Detection and Hardware Failure Prediction</h1>
+      <div className="instructions">
+        <h2>Instructions</h2>
+        <p>Please upload a CSV file with the following columns:</p>
+        <ul>
+          <li>Air temperature [K]</li>
+          <li>Process temperature [K]</li>
+          <li>Rotational speed [rpm]</li>
+          <li>Torque [Nm]</li>
+          <li>Tool wear [min]</li>
+          <li>Machine failure</li>
+          <li>TWF</li>
+          <li>HDF</li>
+          <li>PWF</li>
+          <li>OSF</li>
+          <li>RNF</li>
+        </ul>
+        <p>All columns should contain numeric data. The "Machine failure" and failure type columns (TWF, HDF, PWF, OSF, RNF) should contain binary values (0 or 1).</p>
+      </div>
       <form onSubmit={handleSubmit}>
         <input type="file" onChange={handleFileChange} accept=".csv" />
         <button type="submit" disabled={!file || loading}>
